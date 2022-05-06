@@ -11,6 +11,10 @@ import time
 import requests
 
 url = 'http://ptsv2.com/t/s5an6-1651803830/post'
+particleURL = 'https://api.particle.io/v1/devices/e00fce68a9f4ac6593b954a9/speechEventHandler'
+access = {"access_token":"123412341234"}
+
+    
 
 # http://ptsv2.com/t/s5an6-1651803830 Logs Post Requests
 
@@ -129,6 +133,7 @@ def buttonPress():
 def postReading(value):
 	myobj = {'reading': value}
 	x = requests.post(url, data = myobj)
+	#y = requests.post(particleURL, header=access, data=myobj)
 	print(x.text)
 
 # Test Reading
